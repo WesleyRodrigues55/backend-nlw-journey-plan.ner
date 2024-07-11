@@ -1,0 +1,322 @@
+{
+	"info": {
+		"_postman_id": "05c13a79-cb15-4300-bdfd-01ef5460d455",
+		"name": "NLW JOURNEY",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27775346"
+	},
+	"item": [
+		{
+			"name": "Activities",
+			"item": [
+				{
+					"name": "Create Activity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Descansar\",\r\n    \"occurs_at\": \"2024-08-02 17:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/trips/3486f1d0-7a61-4019-bf91-b431c7e4d075/activities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"trips",
+								"3486f1d0-7a61-4019-bf91-b431c7e4d075",
+								"activities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Activity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/trips/3486f1d0-7a61-4019-bf91-b431c7e4d075/activities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"trips",
+								"3486f1d0-7a61-4019-bf91-b431c7e4d075",
+								"activities"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Links",
+			"item": [
+				{
+					"name": "Get Links",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/trips/3486f1d0-7a61-4019-bf91-b431c7e4d075/links",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"trips",
+								"3486f1d0-7a61-4019-bf91-b431c7e4d075",
+								"links"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Link",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Reserva do AirBnB\",\r\n    \"url\": \"https://airbnb.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/trips/3486f1d0-7a61-4019-bf91-b431c7e4d075/links",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"trips",
+								"3486f1d0-7a61-4019-bf91-b431c7e4d075",
+								"links"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Participants",
+			"item": [
+				{
+					"name": "Get Participant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/participant/c9a21024-7287-4ac8-ab4b-879e1e34e7ae",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"participant",
+								"c9a21024-7287-4ac8-ab4b-879e1e34e7ae"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Participants",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/trips/3486f1d0-7a61-4019-bf91-b431c7e4d075/participants",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"trips",
+								"3486f1d0-7a61-4019-bf91-b431c7e4d075",
+								"participants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm participant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/participants/c9a21024-7287-4ac8-ab4b-879e1e34e7ae/confirm",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"participants",
+								"c9a21024-7287-4ac8-ab4b-879e1e34e7ae",
+								"confirm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Invite",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"wesleysantos@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/trips/3486f1d0-7a61-4019-bf91-b431c7e4d075/invites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"trips",
+								"3486f1d0-7a61-4019-bf91-b431c7e4d075",
+								"invites"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trips",
+			"item": [
+				{
+					"name": "Get Trip Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/trips/3486f1d0-7a61-4019-bf91-b431c7e4d075",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"trips",
+								"3486f1d0-7a61-4019-bf91-b431c7e4d075"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create trip",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"destination\": \"São Paaulo\",\r\n    \"starts_at\": \"2024-08-01 18:00:00\",\r\n    \"ends_at\": \"2024-11-01 18:00:00\",\r\n    \"owner_name\": \"Wesley Rodrigues\",\r\n    \"owner_email\": \"wesley@gmail.com\",\r\n    \"emails_to_invite\": [\r\n        \"wesley1@gmail.com\",\r\n        \"wesley2@gmail.com\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/trips",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"trips"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update trip",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"destination\": \"São Paulo\",\r\n    \"starts_at\": \"2024-08-01 18:00:00\",\r\n    \"ends_at\": \"2024-11-01 18:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/trips/3486f1d0-7a61-4019-bf91-b431c7e4d074",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"trips",
+								"3486f1d0-7a61-4019-bf91-b431c7e4d074"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm trip",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/trips/3486f1d0-7a61-4019-bf91-b431c7e4d075/confirm",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"trips",
+								"3486f1d0-7a61-4019-bf91-b431c7e4d075",
+								"confirm"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
