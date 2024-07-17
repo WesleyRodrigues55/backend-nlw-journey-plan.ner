@@ -50,11 +50,7 @@ export async function updateTrip(app: FastifyInstance) {
         }
 
         activitiesTrip.map(activity => {
-            if (dayjs(activity.occurs_at).startOf('day').isBefore(dayjs(starts_at).startOf('day'))) {
-                deleteActivitiesNoRange(activity.id)
-            }
-
-            if (dayjs(activity.occurs_at).startOf('day').isAfter(dayjs(ends_at).startOf('day'))) {
+            if (dayjs(activity.occurs_at).startOf('day').isBefore(dayjs(starts_at).startOf('day')) || dayjs(activity.occurs_at).startOf('day').isAfter(dayjs(ends_at).startOf('day'))) {
                 deleteActivitiesNoRange(activity.id)
             }
         })
