@@ -29,14 +29,35 @@ export async function updateTrip(app: FastifyInstance) {
             throw new ClientError('Trip not found.')
         }
 
-        if (dayjs(starts_at).isBefore(new Date())) {
+        if (dayjs(starts_at).startOf('day').isBefore(dayjs(new Date()).startOf('day'))) {
             throw new ClientError("Invalid trip start date")
         }
 
-        if (dayjs(ends_at).isBefore(starts_at)) {
+        if (dayjs(ends_at).startOf('day').isBefore(dayjs(starts_at).startOf('day'))) {
             throw new ClientError("Invalid trip end date")
         }
 
+        const activitiesTrip = await prisma.activity.findMany({
+            select: {
+                id: true,
+                occurs_at: true,
+            },
+            where: { trip_id: tripId }
+        })
+
+        const deleteActivitiesNoRange = async (activityId: string) => {
+            await prisma.activity.delete({ where: { id: activityId }})
+        }
+
+        activitiesTrip.map(activity => {
+            if (dayjs(activity.occurs_at).startOf('day').isBefore(dayjs(starts_at).startOf('day'))) {
+                deleteActivitiesNoRange(activity.id)
+            }
+
+            if (dayjs(activity.occurs_at).startOf('day').isAfter(dayjs(ends_at).startOf('day'))) {
+                deleteActivitiesNoRange(activity.id)
+            }
+        })
 
         await prisma.trip.update({
             where: { id: tripId },
